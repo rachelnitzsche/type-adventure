@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EASE</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/ease.css">
+	<link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i" rel="stylesheet">
+	<script type="text/javascript">
+		function start(){
+			window.timerID =  setInterval(function() {
+				var aOpaque = document.getElementById('splash').style.opacity;
+				aOpaque = aOpaque-.1;
+				aOpaque = aOpaque.toFixed(1);   
+				document.getElementById('splash').style.opacity = aOpaque;
+				if(document.getElementById('splash').style.opacity<=0)
+				clearInterval(window.timerID);
+			},80);
+			}
+			window.onclick = function(){start();
+			} 
+			
+		function splash() {
+			window.timerID = setInterval(function() {
+			document.getElementById('splash').style.zIndex = -1;},80);
+		}
+	</script>
+</head>
+<body>
+	<div id="splash" style="opacity:1" onclick="splash()"></div>
+	<div id="background"></div>
+	<div id="buttonbox">
+		<a href="index.html"class="button">
+			HOME
+		</a>
+		<a href="map.html" class="button">
+			MAP
+		</a>
+	</div>
+</body>
+</html>
